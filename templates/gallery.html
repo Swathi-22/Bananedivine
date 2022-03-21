@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div scroll-spy="true" id="pic-gallery" class="chipsofic-content-block gallery-block">
+        <div class="container">
+              <div class="row">
+                 <!-- <div class="col-md-12">
+                       <div class="section-title text-center">
+                            <h1>Picture Gallery</h1>
+                            <div class="chipsofic-subtitle">Check our aweomse product images</div>
+                       </div>
+                   </div> -->
+                </div>
+        </div>
+        <div class="gallery-area" >
+            <div class="container-fluid">
+                <div class="row wow fadeInUp">
+                    {% for gallery in gallery %}
+                        <div class="col-sm-6 col-md-3">
+                            <a title="Lorem Ipsum 01" class="gallery-lightbox" href="{{gallery.image.crop.600x420}}"><i class="fa fa-plus"></i> <img src="{{gallery.image.crop.600x420}}" alt=""></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

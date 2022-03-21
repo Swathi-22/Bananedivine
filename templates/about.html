@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div scroll-spy="true" id="about-us" class="chipsofic-content-block">
+    <div class="container">
+        <div class="row">
+           <div class="about-us-section">
+                <div class="col-md-6">
+                    <h1><span>A propos de nous <span><h2>{{about_content.content}}
+                        <span><b style="font-size: 27px;">{{about_content.bold_content}}</b></span> </h2></span> </h1>
+                    <h2>
+                    </h2>
+                    <p>
+                        {{about_banana_divine}}
+                    </p>
+                    <!-- <p>Depuis toute petite j'ai toujours aimé les
+                        bananes plantain. Elles m'ont souvent
+                        procurées cette énergie inexplicable et
+                        puis le goût, on n'en parle ... ? Je ne
+                        m'en suis jamais lassée !!
+                        En grandissant j'ai fait la connaissance
+                        du processus C.E.D
+                        (couper, éplucher,découper).
+                        Je me suis dit waouh c'est donc
+                        tout cela que maman faisait quand nous
+                        recevions du monde à la maison ?
+                        En gérant tout le reste en même
+                        temps ??  Quelle Femme !!  Et
+                        pourtant, malgré le fait de mettre
+                        familiarisée avec le processus, je me suis
+                        rendue compte que je n'avais pas héritée
+                        de la patience de ma maman.
+                        Et un jour j'ai eu cette idée, vue mon
+                        amour pour les bananes plantains et ses
+                        bienfaits dont j'ai bénéficié, et très
+                        honnêtement je pensais être la première
+                        dans le monde à avoir eu cette
+                        illumination et en faisant des recherches je me suis rendue compte que ce n'était pas le cas.Mais en France oui donc j’ai maintenue ma motivation .Pour ma part je veux que vous ayez le choix, raison pour laquelle je vous propose différentes formes selon vos envies, et à prix accessible pour tous!</p> -->
+                </div>
+                <div class="col-md-6 wow fadeInRight">
+                    <img src="{% static 'assets/img/background-image/Banana Cover.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="about-us-section">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                           <h3><i class="fa fa-money" aria-hidden="true"></i><span></span><b>VISION</b></h3>
+                           <p>{{vision}}
+                            <!-- <p>Partager les bienfaits des bananes
+                                plantains car ce sont des fruits qui se
+                                consomment comme des légumes.
+                                Elles contiennent des glucides
+                                complexes mais pour en bénéficier il faut
+                                les manger cuites, elles possèdent
+                                également une forte teneur d'amidon non
+                                digestible.
+                                Source de potassium (système
+                                nerveux,fonction musculaire, pression
+                                sanguine), vitamines C,B6,B9, riche en
+                                magnésium, elles sont un atout pour
+                                notre santé. -->
+                                </p>
+                        </div>
+                        <div class="col-lg-4">
+                           <h3><i class="fa fa-bullseye" aria-hidden="true"></i><span></span><b>MISSION</b></h3>
+                           <p>{{mission}}</p>
+                            <!-- <p>Permettre à tous de pouvoir être
+                                multitâches tout en étant en cuisine
+                                notamment pour les traiteurs, les repas
+                                familiaux... Sans chercher cette
+                                personne qui n'est pas souvent emballé
+                                à l'idée de faire le processus. </p> -->
+                                <span></span>
+                        </div>
+                        <div class="col-lg-4">
+                            <h3><i class="fa fa-address-card" aria-hidden="true"></i><span></span><b>POURQUOI BANANE DIVINE ?</b></h3>
+                            <p>{{why_banana_divine}}</p>
+                             <!-- <p> Il vous suffit d’y goûter pour comprendre le sens même du Nom.
+                                Certainement des bananes quelconques à vos yeux mais au goût vous penserez autrement car nous savons tous que ce qui est fait avec Amour est le meilleur des menus. </p> -->
+                                 <span></span>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div scroll-spy="true" id="our-team" class="chipsofic-content-block">
+    <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+               <div class="section-title text-center">
+                    <h1>Meet the Team</h1>
+                    <div class="chipsofic-subtitle">Check the People who are working behind this awesome product</div>
+               </div>
+           </div>
+        </div>      
+        <div class="row wow fadeInUp">
+            {% for team in team %}
+            <div class="col-sm-3 text-center">
+                <div class="single-team-item">
+                        <img src="{{team.image.url}}" alt="">
+                        <h3>{{team.name}}</h3>
+                        <p>{{team.description}}</p>
+                        <ul>
+                            {% if team.facebook %}
+                            <li><a href="{{team.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                            {% endif %}
+                            {% if team.twiter %}
+                            <li><a href="{{team.twiter}}" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                            {% endif %}
+                            {% if team.instagram %}
+                            <li><a href="{{team.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            {% endif %}
+                        </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div> 
+<div scroll-spy="true" class="chipsofic-content-block counter-block">
+    <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+               <div class="section-title text-center">
+                    <h1>Our Progress</h1>
+                    <div class="chipsofic-subtitle">Check our progress over the years</div>
+               </div>
+           </div>
+        </div>
+        
+       <div class="chipsofic-counter-area text-center">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                   <h2><span class="counter notranslate">9800</span></h2>
+                    <p>Yearly Customer</p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                   <h2><span class="counter notranslate">26000</span></h2>
+                    <p>Sell Per Year</p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                   <h2><span class="counter notranslate">20</span></h2>
+                    <p>Staff</p>
+                </div>
+              
+            </div>
+        </div>  
+    </div>
+</div>
+
+<br>
+{% endblock %}

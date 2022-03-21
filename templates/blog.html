@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div scroll-spy="true" id="our-blog" class="chipsofic-content-block section-gray">
+    <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+               <div class="section-title text-center">
+                    <h1>Our Blog</h1>
+                    <div class="chipsofic-subtitle">Read the latest news about our product</div>
+               </div>
+           </div>
+        </div>
+        
+        <div class="row wow fadeInLeft">
+          {% for blog in blog %}
+            <div class="col-sm-4">
+                <a data-toggle="modal" data-target="#blog-content-{{blog.id}}" class="single-blog-item">
+                    <div class="blog-preview blog-bg-1" style="background-image: url({{blog.image.crop.330x220}});"></div>
+                    <h3>{{blog.heading}}</h3>
+                    <div class="post-meta">
+                        <ul>
+                            <li><i class="fa fa-calendar-o"></i>{{blog.date}}</li>
+                            <li><i class="fa fa-thumb-tack"></i> {{blog.category}}</li>
+                        </ul>
+                    </div>
+                    <span class="claimedRight">{{blog.content}}.</span>
+                </a>
+              </div> 
+              {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Blog Preview Area End -->
+
+<!-- Blog Single Area Start -->
+
+<!-- Blog 1 Content  Start-->
+{% for blog in blog %}
+  <div class="modal fade" id="blog-content-{{blog.id}}" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body blog-single-modal">  
+              <h3>{{blog.heading}}</h3>
+                <div class="post-meta">
+                    <ul>
+                      <li><i class="fa fa-calendar-o"></i>{{blog.date}}</li>
+                      <li><i class="fa fa-thumb-tack"></i> {{blog.category}}</li>
+                    </ul>
+                </div>
+            <img src="{{blog.image.crop.330x220}}" alt="">
+            <p>{{blog.content}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn chipsofic-small-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+{% endfor %}
+
+{% endblock %}

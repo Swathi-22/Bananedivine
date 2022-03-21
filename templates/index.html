@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    
+    <!-- Choose Our Chips Area Start -->
+    <div scroll-spy="true" id="our-products" class="chipsofic-content-block section-gray">
+        <div class="container">
+          <div class="row">
+            
+             <div class="col-md-12">
+                   <div class="section-title text-center">
+                        <h1>choisissez votre forme</h1>
+                        <div class="chipsofic-subtitle">vous avez le choix!</div>
+                   </div>
+               </div>
+            </div>
+            
+           <div class="choose-our-chips-content-area text-center wow fadeInUp">
+                <div class="row">
+                    {% for products in products %}
+                    <div class="col-sm-6 col-md-3 single-chips-item">
+                      <img src="{{products.image.url}}" alt="">
+                       <h3>{{products.name}}</h3>
+                       <div class="pricing"><span>Price:</span> {{products.price}}</div>
+                        <p>{{products.description}}.</p>
+                        <a class="btn chipsofic-small-btn" data-scroll href="#">Order Now</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>  
+        </div>
+    </div>
+    {% if images.image_three %}
+        <div scroll-spy="true" id="customer-feedback" style="background-image:url('{{images.image_three.crop.2656x3326}}');" class="testimonial-slider-wrapper testimonial-bg-1">
+    {% else%}
+        <div scroll-spy="true" class="chipsofic-content-block process-block">
+    {% endif %}
+        <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                 {% for check_prcs in check_process %}
+                   <div class="section-title text-center">
+                     <a onclick="changeVideo('{{check_prcs.video.url}}')"><i class="fa fa-play-circle"></i></a>
+                        <h1>{{check_prcs.title}}</h1>
+                        <div class="chipsofic-subtitle">{{check_prcs.content}}</div>
+                   </div>
+               </div>
+            </div> 
+        </div>
+    </div>
+    <!-- Video Popup -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-label="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video width="400" controls>
+                    <source src="{{check_prcs.video.url}}"  type="video/mp4">
+                     <source src="mov_bbb.ogg" type="video/ogg"> 
+                  </video>           
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- <video width="400" controls>
+        <source src="{{check_prcs.video.url}}" type="video/mp4">
+         <source src="mov_bbb.ogg" type="video/ogg"> -->
+        <!-- Your browser does not support HTML video. -->
+      <!-- </video> --> 
+{% endfor %}
+      
+
+    {% if images.image_two %}
+    <div scroll-spy="true" id="customer-feedback" style="background-image:url('{{images.image_two.crop.1920x1216}}');" class="testimonial-slider-wrapper testimonial-bg-1">
+    {% else%}
+    <div scroll-spy="true" id="customer-feedback" class="testimonial-slider-wrapper testimonial-bg-1">
+    {% endif %}
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+                   <div class="section-title text-center">
+                       
+                        <h1>{{testimonialhead.heading}}</h1>
+                        <div class="chipsofic-subtitle">{{testimonialhead.content}}</div>
+                   </div>
+               </div>
+            </div>
+            <div class="testimonial-slides owl-carousel">
+                {% for testimonial in testimonial %}
+                <div class="testimonial-slide-item-table">
+                    <div class="testimonial-slide-item-tablecell"> 
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6" style="width: 100%;padding: 0 24px;">
+                                <div class="circle-testimonial-item">
+                                    <div class="col-sm-4">
+                                        <img src="{{ testimonial.image.url }}" alt="">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p>{{testimonial.description}}.</p>
+                                        <ul class="review-stars text-right">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <h4>{{testimonial.name}} <span>{{testimonial.destination}}</span></h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor  %}
+        </div>
+        </div>
+    </div>
+    </div>
+
+    
+
+    
+{% endblock %}
+
+    
