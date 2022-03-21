@@ -39,7 +39,7 @@
         <div class="container">
           <div class="row">
              <div class="col-md-12">
-                 {% for check_prcs in check_process %}
+                {% for check_prcs in check_process %}
                    <div class="section-title text-center">
                      <a onclick="changeVideo('{{check_prcs.video.url}}')"><i class="fa fa-play-circle"></i></a>
                         <h1>{{check_prcs.title}}</h1>
@@ -64,15 +64,14 @@
         </div>
       </div>
     </div>
-    
+    {% endfor %}
     
     <!-- <video width="400" controls>
-        <source src="{{check_prcs.video.url}}" type="video/mp4">
+        <source src="{{check_process.video.url}}" type="video/mp4">
          <source src="mov_bbb.ogg" type="video/ogg"> -->
         <!-- Your browser does not support HTML video. -->
       <!-- </video> --> 
-{% endfor %}
-      
+
 
     {% if images.image_two %}
     <div scroll-spy="true" id="customer-feedback" style="background-image:url('{{images.image_two.crop.1920x1216}}');" class="testimonial-slider-wrapper testimonial-bg-1">

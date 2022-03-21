@@ -4,7 +4,7 @@ def main_context(request):
     baner = banner.objects.all().first()
     images = background_image.objects.all().first()
     company_deatils =CompanyDetail.objects.all().order_by("-id")
-    check_process=CheckProcess.objects.all()
+    check_process=CheckProcess.objects.all().order_by("-id")[:1]    
     facebook = ''
     instagramme = ''
     snapchat = ''
