@@ -213,6 +213,7 @@ img {
 .header-area {
     background: url('assets/img/background-image/banner-img.jpg') no-repeat fixed center;
     background-size: cover;
+    background-position: bottom;
 }
 .header-area .cbp-af-header {
   background: transparent;

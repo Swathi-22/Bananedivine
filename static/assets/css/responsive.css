@@ -256,6 +256,11 @@
 }
 
 }
-
-
    
+@media only screen and  (min-width : 375px)  and (max-width: 414px) {
+    .header-area {
+        /* background: url(assets/img/background-image/banner-img.jpg) no-repeat fixed center; */
+        background-size: cover;
+        background-position: bottom;
+    }
+}
