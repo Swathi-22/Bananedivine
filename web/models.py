@@ -1,4 +1,5 @@
 
+
 from django.db import models
 from versatileimagefield.fields import VersatileImageField, PPOIField
 
@@ -89,3 +90,14 @@ class CheckProcess(models.Model):
     title=models.CharField(max_length=200)
     content=models.CharField(max_length=250)
     video=models.FileField()
+
+
+class Progress(models.Model):
+    title=models.CharField(max_length=200)
+    summary=models.CharField(max_length=250)
+    count1=models.CharField(max_length=50)
+    discription1=models.CharField(max_length=100)
+    count2=models.CharField(max_length=50)
+    discription2=models.CharField(max_length=100)
+    count3=models.CharField(max_length=50)
+    discription3=models.CharField(max_length=100)

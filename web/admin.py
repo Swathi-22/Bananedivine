@@ -1,7 +1,6 @@
-from email import message
 from django.contrib import admin
 from . import models 
-from .models import CompanyDetail,CheckProcess
+from .models import CompanyDetail,CheckProcess,Progress
 # Register your models here.
 class Testimonial(admin.ModelAdmin):
     model = models.Testimonial
@@ -86,4 +85,9 @@ class CompanyDetailAdmin(admin.ModelAdmin):
 
 @admin.register(CheckProcess)
 class CheckProcessAdmin(admin.ModelAdmin):
+    list_display = ( 'title',)
+
+
+@admin.register(Progress)
+class ProgressAdmin(admin.ModelAdmin):
     list_display = ( 'title',)

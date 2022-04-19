@@ -1,4 +1,3 @@
-from statistics import mode
 from django.shortcuts import render
 from  . import models
 # Create your views here.
@@ -12,6 +11,7 @@ def index(request):
     return render(request,'index.html',context)
 
 def about(request):
+    progress=models.Progress.objects.all().order_by("-id")[:1]
     about = models.about.objects.all()
     aboutContent = models.about_banana_divine.objects.all().first()
     aboutBananaDivine = ''
@@ -37,7 +37,8 @@ def about(request):
         'mission':mission,
         'why_banana_divine':whyBananaDivine,
         'about_banana_divine':aboutBananaDivine,
-        'about_content':aboutContent
+        'about_content':aboutContent,
+        'progress':progress
     }
 
     

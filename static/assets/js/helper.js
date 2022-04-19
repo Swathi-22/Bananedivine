@@ -54,7 +54,7 @@ if (currentLocation == '/about/') {
 else if (currentLocation == '/gallery/') {
     $("#gallery").addClass('activeli')
     $("#bannerHeader").html('Gallery')
-    $("#bannerContent").html('Cracking some crispy chips for you')
+    $("#bannerContent").html('Évolution Banane Plantain')
 }
 else if (currentLocation == '/blog/') {
     $("#blog").addClass('activeli')

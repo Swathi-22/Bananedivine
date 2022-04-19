@@ -96,6 +96,7 @@
 
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) {
+    
     .about-us-section p {
         padding-top: 5px;
         text-align: justify;
@@ -116,6 +117,7 @@
     padding: 0px 0 10px;
     width: 100%;
 }
+
 
 .btn-left, .btn-right {
     float: none;
@@ -240,8 +242,7 @@
 }
     
 /* Wide Mobile Layout: 480px. */
-@media only screen and (min-width: 480px) and (max-width: 767px) { 
-
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 .chipsofic-purchase-btn {
     width:60%;
 }
