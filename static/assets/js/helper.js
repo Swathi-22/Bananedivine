@@ -47,8 +47,8 @@ $("#langEn").click(function(){
 var currentLocation = window.location.pathname;
 if (currentLocation == '/about/') {
     $("#aboutUs").addClass('activeli')
-    $("#bannerHeader").html(' À PROPOS DE NOUS')
-    $("#bannerContent").html('Ressentez le vrai goût de la banane')
+    $("#bannerHeader").html('')
+    $("#bannerContent").html('')
 
 }
 else if (currentLocation == '/gallery/') {

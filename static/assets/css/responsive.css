@@ -262,6 +262,6 @@
     .header-area {
         /* background: url(assets/img/background-image/banner-img.jpg) no-repeat fixed center; */
         background-size: cover;
-        background-position: bottom;
+        background-position: center;
     }
 }
