@@ -4,10 +4,13 @@
 <div scroll-spy="true" id="about-us" class="chipsofic-content-block">
     <div class="container">
         <div class="row">
-           <div class="about-us-section">
+            <div class="about-us-section">
                 <div class="col-md-6">
-                    <h1><span>A propos de nous <span><h2>{{about_content.content}}
-                        <span><b style="font-size: 27px;">{{about_content.bold_content}}</b></span> </h2></span> </h1>
+                    <h1><span>{{about_content.heading}} <span>
+                                <h2>{{about_content.content}}
+                                    <span><b style="font-size: 27px;">{{about_content.bold_content}}</b></span>
+                                </h2>
+                            </span> </h1>
                     <h2>
                     </h2>
                     <p>
@@ -46,9 +49,9 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-lg-4">
-                           <h3><i class="fa fa-money" aria-hidden="true"></i><span></span><b>VISION</b></h3>
-                           <p>{{vision}}
-                            <!-- <p>Partager les bienfaits des bananes
+                            <h3><i class="fa fa-money" aria-hidden="true"></i><span></span><b>VISION</b></h3>
+                            <p>{{vision}}
+                                <!-- <p>Partager les bienfaits des bananes
                                 plantains car ce sont des fruits qui se
                                 consomment comme des légumes.
                                 Elles contiennent des glucides
@@ -61,26 +64,27 @@
                                 sanguine), vitamines C,B6,B9, riche en
                                 magnésium, elles sont un atout pour
                                 notre santé. -->
-                                </p>
+                            </p>
                         </div>
                         <div class="col-lg-4">
-                           <h3><i class="fa fa-bullseye" aria-hidden="true"></i><span></span><b>MISSION</b></h3>
-                           <p>{{mission}}</p>
+                            <h3><i class="fa fa-bullseye" aria-hidden="true"></i><span></span><b>MISSION</b></h3>
+                            <p>{{mission}}</p>
                             <!-- <p>Permettre à tous de pouvoir être
                                 multitâches tout en étant en cuisine
                                 notamment pour les traiteurs, les repas
                                 familiaux... Sans chercher cette
                                 personne qui n'est pas souvent emballé
                                 à l'idée de faire le processus. </p> -->
-                                <span></span>
+                            <span></span>
                         </div>
                         <div class="col-lg-4">
-                            <h3><i class="fa fa-address-card" aria-hidden="true"></i><span></span><b>POURQUOI BANANE DIVINE ?</b></h3>
+                            <h3><i class="fa fa-address-card" aria-hidden="true"></i><span></span><b>POURQUOI BANANE
+                                    DIVINE ?</b></h3>
                             <p>{{why_banana_divine}}</p>
-                             <!-- <p> Il vous suffit d’y goûter pour comprendre le sens même du Nom.
+                            <!-- <p> Il vous suffit d’y goûter pour comprendre le sens même du Nom.
                                 Certainement des bananes quelconques à vos yeux mais au goût vous penserez autrement car nous savons tous que ce qui est fait avec Amour est le meilleur des menus. </p> -->
-                                 <span></span>
-                         </div>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,70 +95,75 @@
 
 <div scroll-spy="true" id="our-team" class="chipsofic-content-block">
     <div class="container">
-       <div class="row">
-         <div class="col-md-12">
-               <div class="section-title text-center">
-                    <h1>Rencontrer l'équipe</h1>
-                    <div class="chipsofic-subtitle">BANANE DIVINE</div>
-               </div>
-           </div>
-        </div>      
+        <div class="row">
+            <div class="col-md-12">
+                {% for team in team %}
+                <div class="section-title text-center">
+                    <h1>{{team.heading}}</h1>
+                    <div class="chipsofic-subtitle">{{team.summary}}</div>
+                </div>
+            </div>
+        </div>
         <div class="row wow fadeInUp">
-            {% for team in team %}
+
             <div class="col-sm-3 text-center">
                 <div class="single-team-item">
-                        <img src="{{team.image.url}}" alt="">
-                        <h3>{{team.name}}</h3>
-                        <p>{{team.description}}</p>
-                        <ul>
-                            {% if team.facebook %}
-                            <li><a href="{{team.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            {% endif %}
-                            {% if team.twiter %}
-                            <li><a href="{{team.twiter}}" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-                            {% endif %}
-                            {% if team.instagram %}
-                            <li><a href="{{team.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            {% endif %}
-                        </ul>
+                    <img src="{{team.image.url}}" alt="">
+                    <h3>{{team.name}}</h3>
+                    <p>{{team.description}}</p>
+                    <ul>
+                        {% if team.facebook %}
+                        <li><a href="{{team.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                        {% endif %}
+                        {% if team.twiter %}
+                        <li><a href="{{team.twiter}}" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                        {% endif %}
+                        {% if team.instagram %}
+                        <li><a href="{{team.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        {% endif %}
+                    </ul>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-</div> 
-{% for progressess in progress %}
+</div>
+
 <div scroll-spy="true" class="chipsofic-content-block counter-block">
     <div class="container">
-       <div class="row">
-         <div class="col-md-12">
-               <div class="section-title text-center">
-                    <h1>{{progressess.title}}</h1>
-                    <div class="chipsofic-subtitle">{{progressess.summary}}</div>
-               </div>
-           </div>
+        {% for prog in progress %}
+        <div class="row">
+           
+            <div class="col-md-12">
+
+                <div class="section-title text-center">
+                    <h1>{{prog.title}}</h1>
+                    <div class="chipsofic-subtitle">{{prog.summary}}</div>
+                </div>
+            </div>
         </div>
-        
-       <div class="chipsofic-counter-area text-center">
+
+        <div class="chipsofic-counter-area text-center">
             <div class="row">
                 <div class="col-sm-6 col-md-4">
-                   <h2><span class="counter notranslate">{{progressess.count1}}</span></h2>
-                    <p>{{progressess.discription1}}</p>
+                    <h2><span class="counter notranslate">{{prog.count1}}</span></h2>
+                    <p>{{prog.discription1}}</p>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                   <h2><span class="counter notranslate">{{progressess.count2}}</span></h2>
-                    <p>{{progressess.discription2}}</p>
+                    <h2><span class="counter notranslate">{{prog.count2}}</span></h2>
+                    <p>{{prog.discription2}}</p>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                   <h2><span class="counter notranslate">{{progressess.count3}}</span></h2>
-                    <p>{{progressess.discription3}}</p>
+                    <h2><span class="counter notranslate">{{prog.count3}}</span></h2>
+                    <p>{{prog.discription3}}</p>
                 </div>
-              
+
             </div>
-        </div>  
+        </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
+
 
 <br>
 {% endblock %}

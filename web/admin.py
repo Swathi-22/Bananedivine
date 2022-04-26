@@ -49,7 +49,7 @@ admin.site.register(models.Team, Team)
 # admin.site.register(models.blog,Blog)
 class about_banana_divine(admin.ModelAdmin):
     model = models.about_banana_divine
-    list_display = ['content','bold_content']
+    list_display = ['heading','bold_content']
 
 admin.site.register(models.about_banana_divine, about_banana_divine)
 

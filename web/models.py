@@ -29,6 +29,8 @@ class Gallery(models.Model):
     image_ppoi = PPOIField()
 
 class Team(models.Model):
+    heading= models.CharField(max_length=50,null=True,blank=True)
+    summary=models.CharField(max_length=100,null=True,blank=True)
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to ='team')
     description = models.TextField(max_length=300)
@@ -62,6 +64,7 @@ class about(models.Model):
     content = models.TextField(max_length=2000)
 
 class about_banana_divine(models.Model):
+    heading = models.CharField(max_length=150)
     content = models.CharField(max_length=70)
     bold_content = models.CharField(max_length=50)
     
