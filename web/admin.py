@@ -1,6 +1,6 @@
 from django.contrib import admin
 from . import models 
-from .models import CompanyDetail,CheckProcess,Progress
+from .models import CompanyDetail,CheckProcess,Progress,MainBanners
 # Register your models here.
 class Testimonial(admin.ModelAdmin):
     model = models.Testimonial
@@ -91,3 +91,8 @@ class CheckProcessAdmin(admin.ModelAdmin):
 @admin.register(Progress)
 class ProgressAdmin(admin.ModelAdmin):
     list_display = ( 'title',)
+
+
+@admin.register(MainBanners)
+class MainBannersAdmin(admin.ModelAdmin):
+    list_display = ('category','heading_1','heading_2')

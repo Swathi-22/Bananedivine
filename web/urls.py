@@ -23,4 +23,5 @@ urlpatterns = [
     path('blog/',views.blog),
     path('gallery/',views.gallery),
     path('contact/',views.contact),
+    path('banner/',views.banners)
 ]

@@ -104,3 +104,10 @@ class Progress(models.Model):
     discription2=models.CharField(max_length=100)
     count3=models.CharField(max_length=50)
     discription3=models.CharField(max_length=100)
+
+
+class MainBanners(models.Model):
+    category_choices=(('home','home'),('about','about'),('gallery','gallery'),('contact','contact'))
+    category=models.CharField(max_length=20,choices=category_choices,unique=True)
+    heading_1=models.CharField(max_length=50)
+    heading_2=models.CharField(max_length=100)

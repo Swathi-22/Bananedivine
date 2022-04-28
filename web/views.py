@@ -1,5 +1,8 @@
+from statistics import mode
+import django
 from django.shortcuts import render
 from  . import models
+from django.http import JsonResponse
 # Create your views here.
 
 def index(request):
@@ -76,3 +79,15 @@ def contact(request):
     }
     
     return render(request, 'contact.html',context)
+
+def banners(request):
+    category = request.POST['category']
+    obj = models.MainBanners.objects.filter(category=category)
+    a = []
+    for i in obj:
+        data = {
+            'heading_1':i.heading_1,
+            'heading_2':i.heading_2,
+
+        }
+        return JsonResponse(data)
