@@ -629,7 +629,7 @@ img {
 }
 
 .circle-testimonial-item {
-    height: 455px;
+    height: 200px;
     background: rgba(0,0,0,.3);
     border: 1px dotted #000;
     font-family: 'Raleway', sans-serif;
@@ -655,11 +655,11 @@ img {
     border-radius: 75px;
     border: 1px solid #EAEAEA;
     display: block;
-    height: 150px;
+    height: 110px;
     margin: 0 auto 10px;
     padding: 5px;
     transition: all 0.9s;
-    width: 150px;
+    width: 115px !important;
 }
 .circle-testimonial-item:hover img {
   -moz-transform: scale(1.1);

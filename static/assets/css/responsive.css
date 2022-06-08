@@ -256,6 +256,7 @@
     font-size: 60px;
 }
 
+
 }
    
 @media only screen and  (min-width : 375px)  and (max-width: 414px) {
@@ -263,5 +264,17 @@
         /* background: url(assets/img/background-image/banner-img.jpg) no-repeat fixed center; */
         background-size: cover;
         background-position: center;
+    }
+}
+
+@media only screen and  (min-width : 320px)  and (max-width: 576px){
+    .circle-testimonial-item {
+        height: 455px;
+        background: rgba(0,0,0,.3);
+        border: 1px dotted #000;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        margin-top: 30px;
+        padding: 20px 7px;
     }
 }

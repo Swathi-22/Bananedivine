@@ -1,17 +1,22 @@
-
 $(document).ready(function(){
     if(localStorage.getItem("lang") === null){
         setTimeout(() => {
             $("#langFr").click()
             $("#langFr").addClass('activeli')
-        }, 500);
+        }, 1000);
     }
     else{
         if(localStorage.getItem("lang") == 'en'){
             setTimeout(() => {
                 $("#langEn").click()
                 $("#langEn").addClass('activeli')
-            }, 500);
+            }, 1000);
+        }
+        else if(localStorage.getItem("lang") == 'fr'){
+            setTimeout(() => {
+                $("#langFr").click()
+                $("#langFr").addClass('activeli')
+            }, 1000);
         }
         else{
             setTimeout(() => {
@@ -34,9 +39,6 @@ $("#langEn").click(function(){
     localStorage.setItem("lang",'en');
     $("#langEn").addClass('activeli');
     $("#langFr").removeClass('activeli');
-
-
-
 });
 
 //  $(document).ready(function(){
